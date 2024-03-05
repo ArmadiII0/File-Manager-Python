@@ -109,12 +109,12 @@ if __name__ == "__main__":
 
     command = args.command
 
-    if command == "cd":
+    if command == "rcd":
         if args.args:
             ChangeDir(args.args[0])
         else:
             print("Необходимо указать имя папки для перехода.")
-    elif command == "mkdir":
+    elif command == "rrmkdir":
         if args.args:
             CreateDir(args.args[0])
         else:
@@ -124,45 +124,45 @@ if __name__ == "__main__":
             RemDir(args.args[0])
         else:
             print("Необходимо указать имя папки для удаления.")
-    elif command == "ls":
+    elif command == "rls":
         ListFiles()
-    elif command == "touch":
+    elif command == "rtouch":
         if args.args:
             CreateFile(args.args[0])
         else:
             print("Необходимо указать имя файла для создания.")
-    elif command == "write":
+    elif command == "rwrite":
         if len(args.args) >= 2:
             file_name = args.args[0]
             text = ' '.join(args.args[1:])
             WriteToFile(file_name, text)
         else:
             print("Необходимо указать имя файла и текст для записи.")
-    elif command == "read":
+    elif command == "rread":
         if args.args:
             ReadFile(args.args[0])
         else:
             print("Необходимо указать имя файла для чтения.")
-    elif command == "rm":
+    elif command == "rrm":
         if args.args:
             RemFile(args.args[0])
         else:
             print("Необходимо указать имя файла для удаления.")
-    elif command == "cp":
+    elif command == "rcp":
         if len(args.args) >= 2:
             source_path = args.args[0]
             destination_path = args.args[1]
             CopyFile(source_path, destination_path)
         else:
             print("Необходимо указать исходный и целевой пути для копирования файла.")
-    elif command == "mv":
+    elif command == "rmv":
         if len(args.args) >= 2:
             source_path = args.args[0]
             destination_path = args.args[1]
             MoveFile(source_path, destination_path)
         else:
             print("Необходимо указать исходный и целевой пути для перемещения файла.")
-    elif command == "rename":
+    elif command == "rrename":
         if len(args.args) >= 2:
             old_name = args.args[0]
             new_name = args.args[1]
